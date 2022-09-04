@@ -1,5 +1,5 @@
 ---
-title: the first post
+title: the first post test
 layout:default
 ---
 
