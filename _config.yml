@@ -1,7 +1,7 @@
 # Site settings
 title:          Thang Nguyen
 description:    "Minimal Jekyll theme for storytellers"
-baseurl:        "/thang"
+# baseurl:        "/thang"
 url:            "https://chesterhow.github.io"
 
 # Google Analytics
