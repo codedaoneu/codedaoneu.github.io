@@ -1,11 +1,16 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <title>Blog 01</title>
-</head>
-<body>
-<div id="wrapper">
-    <h1>Blog của Thắng Nguyễn</h1>
-</div>
-</body>
+<html lang="en">
+
+  {% include head.html %}
+
+  <body>
+
+    {% include navigation.html %}
+
+    <main>
+      {{ content }}
+    </main>
+
+    {% include footer.html %}
+  </body>
 </html>
