@@ -58,7 +58,7 @@ Ta có thể định dạng các ngôn ngữ lập trình khác nhau bằng cú 
 
 >\```Tên ngôn ngữ
 >
-><Khối code>
+>Khối code
 >
 >\```
 
