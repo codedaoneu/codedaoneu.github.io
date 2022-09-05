@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Thử nghiệm cách viết văn bản bằng ngôn ngữ Markdown"
+title: "Soạn thảo văn bản bằng ngôn ngữ Markdown"
 author: "codedaoneu"
 tags: tutorial
 ---
@@ -52,7 +52,7 @@ Kết quả:
 >
 > ~~***Đoạn văn bản***~~
 
-## Định dạng một khố code
+## Định dạng một khối code
 
 Ta có thể định dạng các ngôn ngữ lập trình khác nhau bằng cú pháp sau:
 
@@ -68,7 +68,7 @@ Ví dụ:
 >
 >Khối code bằng ngôn ngữ markdown
 >
->\```
+>```
 
 Kết quả:
 
@@ -85,22 +85,4 @@ def query_generator(schema_name, table_name, *argv):
         cond = "and {} ".format(arg)
         query = query + cond
     return query
-```
-```python
-import numpy as np
-import cv2
-import matplotlib.pyplot as plt
-
-img = plt.imread('pic.JPEG', cv2.IMREAD_UNCHANGED)
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-print('image shape:', img.shape)
-print('gray shape: ', gray.shape)
-
-plt.figure(figsize = (16, 4))
-plt.subplot(1, 2, 1)
-plt.imshow(img)
-plt.title('Original Image')
-plt.subplot(1, 2, 2)
-plt.imshow(gray)
-plt.title('Gray Image')
 ```
