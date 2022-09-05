@@ -86,4 +86,21 @@ def query_generator(schema_name, table_name, *argv):
         query = query + cond
     return query
 ```
+```python
+import numpy as np
+import cv2
+import matplotlib.pyplot as plt
 
+img = plt.imread('pic.JPEG', cv2.IMREAD_UNCHANGED)
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+print('image shape:', img.shape)
+print('gray shape: ', gray.shape)
+
+plt.figure(figsize = (16, 4))
+plt.subplot(1, 2, 1)
+plt.imshow(img)
+plt.title('Original Image')
+plt.subplot(1, 2, 2)
+plt.imshow(gray)
+plt.title('Gray Image')
+```
