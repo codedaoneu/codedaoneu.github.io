@@ -191,10 +191,12 @@ Kết quả:
 Gần giống với cú pháp chèn link, thêm dấu `!` ở phía trước ngoặc vuông.
 
 ```markdown
-![Minion](https://octodex.github.com/images/minion.png)
+![Minion](https://raw.githubusercontent.com/codedaoneu/codedaoneu.github.io/master/images/Markdown-mark.svg.png)
 ```
 
 Kết quả:
 
-![Minion](https://octodex.github.com/images/minion.png)
+![markdown](https://raw.githubusercontent.com/codedaoneu/codedaoneu.github.io/master/images/Markdown-mark.svg.png)
 
+## Lời kết
+Trên đây là một số cú pháp cơ bản của ngôn ngữ Markdown và các bài thực hành cụ thể. Trong quá trình viết bài, chắc chắn sẽ xuất hiện thêm các cú pháp nâng cao hoặc các cú pháp khác chưa được giới thiệu, tôi sẽ cố gắng tổng hợp và tiếp tục bổ sung.
