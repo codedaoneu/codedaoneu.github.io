@@ -106,7 +106,7 @@ python -m ipykernel install --user --name=project
 
 Lúc này, khi khởi chạy Jupyter Notebook ngay trên môi trường ảo, ta có các lựa chọn sau:
 
-<ảnh>
+![link](https://github.com/codedaoneu/codedaoneu.github.io/blob/96c925968317697b819e875f4b756018ed6b7484/images/ipython%20kernel.png)
 
 Ta chỉ việc chuyển qua lựa chọn kernel vừa tạo, code trong Jupyter sẽ được thực thi đúng trên môi trường ảo mà ta đã tạo cho từng dự án riêng lẻ.
 
