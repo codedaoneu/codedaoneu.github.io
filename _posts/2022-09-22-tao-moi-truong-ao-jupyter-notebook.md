@@ -106,7 +106,20 @@ python -m ipykernel install --user --name=project
 
 Lúc này, khi khởi chạy Jupyter Notebook ngay trên môi trường ảo, ta có các lựa chọn sau:
 
-![link](https://github.com/codedaoneu/codedaoneu.github.io/blob/96c925968317697b819e875f4b756018ed6b7484/images/ipython%20kernel.png)
+![link](https://github.com/codedaoneu/codedaoneu.github.io/blob/master/images/ipython%20kernel.png?raw=true)
 
 Ta chỉ việc chuyển qua lựa chọn kernel vừa tạo, code trong Jupyter sẽ được thực thi đúng trên môi trường ảo mà ta đã tạo cho từng dự án riêng lẻ.
 
+Để so sánh, ta chuyển qua lại các kernel. 
+
+Với kernel mặc định là Python 3. thực thi lệnh kiểm tra đường dẫn của thư viện numpy đã được cài đặt, cho kết quả sau:
+
+![link](https://github.com/codedaoneu/codedaoneu.github.io/blob/master/images/ipython%20default%20kernel.png?raw=true)
+
+Ta có thể thấy đường dẫn của thư viện mà Jypyter đang sử dụng là đường dẫn mặc định của Python được cài trên máy local.
+
+Sau khi chuyển kernel và kiểm tra lại đường dẫn, ta được kết quả sau:
+
+![link](https://github.com/codedaoneu/codedaoneu.github.io/blob/master/images/ipython%20new%20kernel.png?raw=true)
+
+Đường dẫn đã được thay đổi đến thư mục hiện tại mà ta đang sử dụng. Giờ ta đã có thể tùy biến môi trường mà Jupyter Notebook sử dụng để thực thi code trong từng dự án riêng lẻ của mình.
