@@ -116,7 +116,7 @@ Với kernel mặc định là Python 3. thực thi lệnh kiểm tra đường 
 
 ![link](https://github.com/codedaoneu/codedaoneu.github.io/blob/master/images/ipython%20default%20kernel.png?raw=true)
 
-Ta có thể thấy đường dẫn của thư viện mà Jypyter đang sử dụng là đường dẫn mặc định của Python được cài trên máy local.
+Ta có thể thấy đường dẫn của thư viện mà Jupyter đang sử dụng là đường dẫn mặc định của Python được cài trên máy local.
 
 Sau khi chuyển kernel và kiểm tra lại đường dẫn, ta được kết quả sau:
 
