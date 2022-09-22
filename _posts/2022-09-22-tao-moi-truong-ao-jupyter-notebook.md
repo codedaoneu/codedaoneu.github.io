@@ -2,7 +2,7 @@
 layout: post
 title: "Tạo môi trường ảo và khởi chạy trên Jupyter Notebook"
 author: "codedaoneu"
-tags: begin
+tags: tutorial
 ---
 
 # Tạo môi trường ảo và khởi chạy trên Jupyter Notebook
