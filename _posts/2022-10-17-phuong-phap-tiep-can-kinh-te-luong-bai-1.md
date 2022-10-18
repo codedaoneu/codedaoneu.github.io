@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Phương pháp tiếp cận Kinh tế lượng"
+title: "Bài 1: Phương pháp tiếp cận Kinh tế lượng"
 author: "codedaoneu"
 tags: econometrics
 ---
