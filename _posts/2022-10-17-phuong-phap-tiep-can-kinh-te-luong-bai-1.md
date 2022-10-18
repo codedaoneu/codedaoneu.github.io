@@ -21,6 +21,8 @@ Bài 4: Kiểm định và lựa chọn mô hình.
 
 Loạt bài viết sẽ được tiếp tục phát triển trong đó trọng tâm vào các lớp mô hình phân tích dữ liệu chuỗi thời gian, loại dữ liệu đang trở nên rất phổ biến hiện nay và các ứng dụng của nó.
 
+Loạt bài viết tham khảo rất lớn từ Giáo trình Kinh tế lượng và kết hợp với một số tài liệu khác để làm sáng tỏ thêm vấn đề và ví dụ thực tế. Vì vậy, đây cũng có thể xem như tư liệu cô đọng lại kiến thức của Kinh tế lượng đã được học và các vấn đề băn khoăn trong việc làm việc với dữ liệu thực tế của mình. Trong quá trình biên soạn, ngoài kiến thức chính thống, tôi cũng có để lại các nhận định cá nhân của mình và cũng như không thể tránh khỏi sai sót, rất mong được sự góp ý từ phía các bạn đọc.
+
 ## Các khái niệm Kinh tế lượng
 
 Dùng từ Các khái niệm về Kinh tế lượng, bởi vì chưa thực sự có một định nghĩa thống nhất, được mọi người cùng chấp nhận để định nghĩa về bộ môn này.
