@@ -5,8 +5,6 @@ author: "codedaoneu"
 tags: econometrics
 ---
 
-# Tại sao lại là Kinh tế lượng?
-
 Trong những năm gần đây, sự phát triển của các mô hình máy học, mô hình AI đã trở nên mạnh mẽ ở cả Việt Nam và trên thế giới. Các mô hình này ngày càng có tính ứng dụng cao cũng như ngày càng hoàn thiện hơn do sự phát triển của năng lực tính toán của máy tính, và sự nghiên cứu không ngừng nghỉ của cộng đồng và các chuyên gia. Tuy nhiên, với các bài toán kinh tế nói riêng, thì Kinh tế lượng, một cách tiếp cận có vẻ cổ điển vẫn có vai trò vô cùng quan trọng và vẫn đang tiếp tục đóng góp vai trò của mình trong ngành khoa học về kinh tế nói riêng. Loạt bài viết sau mong muốn sẽ đóng góp vào kho tài liệu chung của cộng đồng về cách tiếp cận của kinh tế lượng với các vấn đề kinh tế, khái niệm, các mô hình và sự khác biệt của Kinh tế lượng với các bài toán được giải quyết theo hướng tiếp cận Máy học, AI...
 
 Loạt bài viết có các nội dung sau:
