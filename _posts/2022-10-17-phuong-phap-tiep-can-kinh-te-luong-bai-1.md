@@ -94,3 +94,24 @@ Phân loại theo nguồn gôc số liệu:
 1. Dữ liệu thực nghiệm: Được tạo ra bằng cách kiểm soát một cách nhân tạo các yếu tố chi phối lên dữ liệu đó. Ví dụ, người ta kiểm soát chất lượng của một giống cây bằng cách sử dụng chế độ nước, phân bón khác nhau và lưu lại kết quả để đánh giá.
 2. Dữ liệu phi thực nghiệm: Khi không thể kiểm soát được các yếu tố chi phối lên dữ liệu, đây được gọi là dữ liệu phi thực nghiệm. Ví dụ như ta không thể kiểm soát được tỷ lệ lạm phát bằng việc thử nghiệm tăng cung tiền ở nhiều quy mô khác nhau. Điều này là phi lý và không thể diễn ra trên thực tế.
 
+## Hồi quy đơn biến
+
+### Giới thiệu bộ dữ liệu giá nhà và bài toán dự báo giá nhà
+
+Là một bài toán trên <kaggle.com> . Được xem như là sân chơi quốc tế dành cho cộng đồng trí tuệ nhân tạo, khám phá và xây dựng các mô hình AI. 
+
+Link cuộc thi: <https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques>
+
+Bộ dữ liệu và mô tả: <https://www.kaggle.com/competitions/house-prices-advanced-regression-techniques/data>
+
+### Hồi quy đơn biến
+
+Ở đây tôi lấy Python làm công cụ do mức độ phổ biến và được các công ty chấp nhận, áp dụng rộng rãi. Trong trường học, chúng ta cũng đã được áp dụng với một số công cụ phân tích thống kê như Eviews, SPSS,... Ta cũng hoàn toàn có thể sử dụng các công cụ này để thực hiện các phép tính và ước lượng mô hình hồi quy.
+
+Theo cách tiếp cận của KTL và áp dụng mô hình hồi quy đơn biến, trong bộ dữ liệu, tôi chọn biến độc lập X là biến **LotArea** dựa theo quan niệm cơ bản về giá đất, đó là miếng đất càng to thì giá càng cao. Biến phụ thuộc Y là biến **SalePrice**.
+
+Hơi khác một chút so với phương pháp luận của KTL, nhưng tôi đã trình bày ở trên, chúng ta đã có dữ liệu trước, rồi mới đi tìm mô hình thích hợp để giải thích và dự báo.
+
+#### Xây dựng mô hình và hàm hồi quy
+
+
