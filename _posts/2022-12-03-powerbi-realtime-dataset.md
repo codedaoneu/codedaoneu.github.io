@@ -55,11 +55,35 @@ Cách tiếp cận và các bước thực hiện như sau:
 
 Trong workspace, chọn tạo mới Streaming Dataset -> Chọn tiếp API
 
+![ảnh 1](/Users/thang/Desktop/thang.nguyen/codedaoneu.github.io/images/2022-12-03-powerbi-realtime-dataset_01.png)
+
 Thực hiện tiếp các thao tác đặt tên, và định nghĩa các trường dữ liệu cho bộ dataset.
 
-Tiếp tục bật chức năng lưu dữ liệu lịch sử.
+(ảnh 2)
+
+Tiếp tục bật chức năng lưu dữ liệu lịch sử. Việc này sẽ giúp lưu lại dữ liệu trong database của PowerBI service, chúng ta có thể sử dụng dữ liệu ở đây như một source dữ liệu độc lập để xây dựng các báo cáo khác nhau.
+
+(ảnh 3)
 
 Ấn tạo dataset.
 
 ### Bước 3: Tạo một công cụ để đẩy dữ liệu theo thời gian thực nên dataset.
+
+Đến bước này, chúng ta cần sự hỗ trợ của đội ngũ developer trong team để có thể đẩy dữ liệu liên tục lên API của PowerBI. Khi mới tạo API, database được tạo và đó là một dataset rỗng, dữ liệu sẽ được đẩy liên tục lên API và sẽ được lưu lại trong database. Việc này tùy thuộc vào công nghệ mà team bạn đang sử dụng, nói chung thì vấn đề này không phải là việc quá phức tạp về mặt kỹ thuật, tuy nhiên việc đưa dữ liệu gì lên là điều cần phải định nghĩa hết sức kỹ lưỡng trước khi triển khai một dataset thực tế.
+
+### Bước 4: Tạo một báo cáo kết hợp với nguồn dữ liệu khác
+
+Tạo một report mới, trong đó lấy dữ liệu từ API đã được tạo. Lưu ý là ta phải đăng nhập vào tài khoản có quyền truy cập vào API vừa được tạo. 
+
+(ảnh 4)
+
+Đưa thêm dữ liệu từ các nguồn dữ liệu khác để tạo thành dataset, tiếp tục nối quan hệ giữa các bảng trong source dữ liệu để tạo thành model hoàn chỉnh
+
+(ảnh 5)
+
+Thực hiện tính toán bằng các hàm dax với dữ liệu đã được đưa vào model hoàn chỉnh sau đó publish báo cáo hoàn chỉnh lên PowerBI Service và tạo các Dashboard với các visual đã được tạo, hoặc chúng ta có thể trực tiếp tạo các biểu đồ cho bộ dữ liệu real-time trên Dashboard
+
+(ảnh )
+
+Như vậy chúng ta đã hoàn thành việc tạo một bộ dữ liệu thời gian thực với một phương pháp tiếp cận hoàn toàn khác với cách xây dựng báo cáo trước đây. Việc này mở rộng phạm vi sử dụng và các bài toán có thể giải quyết với PowerBI theo một cách mới và rộng hơn trước rất nhiều. Việc tính toán real-time mang lại sức mạnh to lớn trong việc theo dõi hàng ngày, hàng giờ và nhận biết vấn đề nhanh chóng. Tuy nhiên, khi triển khai thực tế, các vấn đề về giới hạn kỹ thuật của PowerBI là không hề ít, đòi hỏi người thực hiện phải hiểu rõ được yêu cầu của bài toán, chọn giải pháp xử lý hợp lý trước khi đi vào triển khai thực tế. Ví dụ đơn giản là về việc đưa dữ liệu để đẩy lên API của PowerBI, nếu chúng ta đưa dữ liệu lên một cách quá chi tiết, điều này dẫn đến một khối lượng dữ liệu khổng lồ sẽ được tải lên và việc tính toán, tuy đa năng hơn, nhưng sẽ rất nhanh sẽ gặp giới hạn về mặt kỹ thuật với thông số số lượng dòng tối đa được lưu trữ trong PowerBI Service.
 
