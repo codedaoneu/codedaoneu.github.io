@@ -125,7 +125,7 @@ Bước 6: Khởi chạy MLFlow và tiến hành training mô hình
         mlflow.log_metric("resid_std", round(resid.std(), 2))
 ```
 
-        mlflow.log_metric("resid_std", round(resid.std(), 2))
+
 Sau khi training mô hình xong, ta ghi chép lại các chỉ số hiệu quả của mô hình bao gồm các chỉ số r2_score, r2_adjusted, resid_mean, resid_std. Các chỉ số này được ghi chép lại bằng hàm log_metric. Với tham số truyền vào mô hình, ta dùng hàm log_param để lưu lại. Sau khi training và đo lường chỉ số hiệu quả với tập dữ liệu test, kết quả hiển thị trên MLFlow như sau:
 
 ![Ví dụ](https://github.com/codedaoneu/codedaoneu.github.io/blob/master/images/2022-12-27-mlflow-example.png?raw=true)
