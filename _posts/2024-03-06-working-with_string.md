@@ -2,7 +2,7 @@
 layout: post
 title: "Working with string"
 author: "codedaoneu"
-tags: tutorial, python
+tags: tutorial python
 ---
 
 # Kiểu dữ liệu, toán tử và các phương thức trong Python
