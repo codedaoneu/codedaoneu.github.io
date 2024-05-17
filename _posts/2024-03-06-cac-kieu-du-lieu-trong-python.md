@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Working with string"
+title: "Các thuộc tính của dữ liệu trong python"
 author: "codedaoneu"
 tags: tutorial python
 ---
