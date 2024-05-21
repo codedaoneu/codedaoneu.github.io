@@ -1,158 +1,113 @@
 ---
 layout: post
-title: "Working with string"
+title: "Các phương pháp đánh giá mô hình phân lớp"
 author: "codedaoneu"
 tags: tutorial python
 ---
 
-## Chuỗi ký tự
+## 1. Các phương pháp chính.
 
-Có nhiều cách để nhập một chuỗi ký tự trong python:
+- Accuracy
+- Confusion matrix
+- True/False Positive/Negative
+- Receiver Operating Characteristic curve
+- Area Under the Curve
+- Precision và Recall
 
-String có thể nằm giữa 2 dấu nháy đơn:
+## Accuracy
 
-Ví dụ:
+Chính là tỷ lệ số điểm được dự đoán đúng trên tổng số điểm dữ liệu được dự đoán trong tập test.
 
-```python 
-'text block'
+## Confusion matrix
+
+Là một ma trận thể hiện số điểm được dự đoán đúng và sai của từng phân lớp.
+
+```
+ Total: 10 | Predicted | Predicted | Predicted |   
+           |    as: 0  |    as: 1  |    as: 2  |   
+-----------|-----------|-----------|-----------|---
+ True: 0   |     2     |     1     |     1     | 4 
+-----------|-----------|-----------|-----------|---
+ True: 1   |     1     |     2     |     0     | 3 
+-----------|-----------|-----------|-----------|---
+ True: 2   |     0     |     1     |     2     | 3 
+-----------|-----------|-----------|-----------|---
 ```
 
-String có thể nằm giữa hai dấu nháy kép:
+Tổng các phần tử trong ma trận chính là tổng số điểm dữ liệu trong tập dữ liệu test.
 
-```python 
-"text block"
+Tổng số phần tử trên đường chéo của ma trận là tổng số điểm dữ liệu được dự đoán
+chính xác.
+
+Ý nghĩa: Phuương pháp đánh giá này giúp biết được tỷ lệ dự đoán đúng
+của từng phân lớp và mức độ hiệu quả nói chung của mô hình.
+
+## True/False Positive/Negative
+
+```
+                  |      Predicted      |      Predicted      |
+                  |     as Positive     |     as Negative     |
+------------------|---------------------|---------------------|
+ Actual: Positive | True Positive (TP)  | False Negative (FN) |
+------------------|---------------------|---------------------|
+ Actual: Negative | False Positive (FP) | True Negative (TN)  |
+------------------|---------------------|---------------------|
 ```
 
-### Escape Characters
+Phương pháp này thường được sử dụng trong mô hình phân loại chỉ có 2 lớp.
+Phương pháp này giúp đánh giá hiện trạng dự đoán kết quả của từng nhóm dự đoán
+, từ đó có thể lựa chọn mô hình để tăng khả năng dự đoán của một nhóm nhất định.
 
-Escape Characters được sử dụng để biểu thị các ký tự đặc biệt:
-1. \n: Xuống dòng (newline).
-2. \t: Tab.
-3. \\': Dấu nháy đơn.
-4. \\": Dấu nháy kép.
-5. \\: Dấu gạch chéo ngược.
+### Receiver Operating Characteristic curve (ROC)
 
-Khi sử dụng các Escape Characters, ta có thể hiển thị các ký tự đặc biệt mà không gây ra lỗi khi xử lý chuỗi ký tự trong python. Ví dụ, sử dụng ký tự `\` đứng trước ký tự đặc biệt mà ta muốn đưa vào chuỗi string:
+Trong một số bài toán, chúng ta có thể sử dụng ngưỡng nhất định nào đó để
+tăng hay giảm False Negative Rate hoặc False Positive Rate.
 
-```python
-'alice\'s dog'
+Đường cong ROC biểu diễn tất cả các cặp xác suất TPR và FPR trong dữ liệu tương
+ứng với tất cả các ngưỡng  có thể được lựa chọn. Việc lựa chọn ngưỡng
+có thể đảm bảo việc lựa chọn nhóm dự đoán quan trọng hơn đối với mô hình.
+
+Đường còn ROC càng tốt khi nó có tiệm cận với trục TPR dốc đứng và tiệm cận
+với đường FPR nằm ngang, điều này thể hiện là với bất kỳ ngưỡng được lựa chọn
+nào, chúng ta đều có tỷ lệ dự đoán đúng cao, tỷ lệ dự đoán sai thấp.
+
+Một cách đánh giá khác của đường ROC là diện tích bên dưới của nó càng tiệm cận 1 thì càng tốt.
+
+## Precision và Recall
+
+``` 
+                  |     Predicted      |     Predicted      |
+                  |    as Positive     |    as Negative     |
+------------------|--------------------|--------------------|
+ Actual: Positive | TPR = TP/(TP + FN) | FNR = FN/(TP + FN) |
+------------------|--------------------|--------------------|
+ Actual: Negative | FPR = FP/(FP + TN) | TNR = TN/(FP + TN) |
+------------------|--------------------|--------------------|
 ```
 
-### Raw String
+Được sử dụng để đánh gái bài toán phân loại mà dữ liệu của các lớp là chênh
+lệch nhau rất nhiều. 
 
-Ta có thể thêm ký tự `r` trước chuỗi ký tự cần in để in ra màn hình chuỗi ký tự nguyên bản của chuỗi. Chuỗi nguyên bản hoàn toàn bỏ qua các escape characters và in ra màn hình bất cứ ký tự `\` nào có chứa trong văn bản.
+- Precision = TP/(TP + FP)
+- Recall = TP(TP + FN) = TPR
 
-### Multiline Strings with Triple Quotes
+Precision cao chứng tỏ mô hình dự đoán càng chính xác các điểm dữ liệu.
+Recall cao chứng tỏ tỷ lệ bỏ sót các điểm thực sự là positive thấp.
 
-Ta có thể sử dụng 3 lần dấu nháy đơn để có thể viết chuỗi string trên nhiều dòng.
+Khi Precision = 1 tức là mọi điểm tìm được đều là điểm Positive, tuy nhiên
+mô hình không đảm bảo tìm được mọi điểm positive.
 
-### Multiline Comments
+Khi Recall = 1 tức là mọi điểm positive đều được tìm thấy, nhưng không đảm
+bảo có lẫn các điểm negative không.
 
-Ta có thể sử dụng 3 dấu nháy kép để biểu thị comment trên nhiều dòng, tương tự như việc sử dụng `#` để biểu diễn comment trên một dòng.
+Một mô hình tốt khi có cả 2 điểm trên càng cao.
 
-## Indexing and Slicing Strings
+### F1-score
 
-Tương tự như list, string trong python cũng sử dụng index vá slices. Ta có thể hình dung một chuỗi ký tự như một list trong đó mỗi phần tử là một ký tự trong chuỗi và mỗi ký tự có một index tương ứng.
+Bằng trung bình harmonic của precision và recall.
 
-## The in and not in Operators with Strings
+F1-score = 1/Precision + 1/Recall
 
-Toán tử `in` và `not in` có thể sử dụng trong strings tương tự như với list values. Ví dụ:
+Điểm R1-Score có giá trị nằm trong khoảng `(0;1]`. Điểm F1 càng cao thì một mô hình càng được phân lớp tốt, khi đó cả precision và recall đầu bằng 1. Nếu cần phải đánh giá các mô hình khác nhau có chỉ số precision và recall khác nhau thì điểm R1 là một thước đo ổn định cho cả hai chỉ số.
 
-```python
-'Hello' in 'Hello World'
-```
-
-Kiểm tra một chuỗi ký tự có chứa ký tự Hello không.
-
-## Useful String Methods
-
-### The upper(), lower(), isupper(), and islower() String Methods
-
-`upper(), lower()` chuyển đổi chuỗi cũ thành một chuỗi mới theo điều kiện viết hoa hoặc viết thường toàn bộ. Bởi vì kết quả của hai hàm trên đều trả về một chuỗi string nên ta hoàn toàn có thể sử dụng bộ hàm này một cách nối tiếp nhau.
-
-`isupper(), and islower()` giúp kiểm tra trong chuỗi có ít nhất một ký tự và tất cả các ký tự được viết hoa hoặc viết thường.
-
-### The isX String Methods
-
-Song song với các hàm `isupper(), and islower()`, Python cũng cung cấp một số hàm khác để kiểm tra chuỗi ký tự
-
-•	 `isalpha()` returns True if the string consists only of letters and is not blank.
-
-•	 `isalnum()` returns True if the string consists only of letters and numbers
-and is not blank.
-
-•	 `isdecimal()` returns True if the string consists only of numeric characters
-and is not blank.
-
-•	 `isspace()` returns True if the string consists only of spaces, tabs, and newlines and is not blank.
-
-•	 `istitle()` returns True if the string consists only of words that begin with
-an uppercase letter followed by only lowercase letters.
-
-### The startswith() and endswith() String Methods
-
-```startswith(), endswith() ``` sử dụng để kiểm tra một chuỗi ký tự bắt đầu và kết thúc bằng một chuỗi ký tự được xác định trước hay không.
-
-### join() and split()
-
-`join()` giúp ta nối một list các chuỗi string lại với nhau. Nó hoạt động bằng cách lặp qua từng phần tử trong list và trả về một chuỗi string sau khi kết nối chúng lại. Chúng ta cũng có thể chèn vào giữa các phần tử một ký tự xác định nào đó. Ví dụ:
-
-```python
-'ABC'.join(['My', 'name', 'is', 'Simon'])
-```
-
-`split()` cho phép ta tách một chuỗi ký tự bằng một ký tự được xác định trước. Nếu như không truyền vào ký tự nào, hàm sẽ mặc định dùng space để split chuỗi.
-
-Ví dụ:
-
-```python
-'MyABCnameABCisABCSimon'.split('ABC')
-```
-
-Chúng ta hoàn toàn có thể sử dụng các ký tự escape để đưa vào và split hoặc join các chuỗi văn bản lại với nhau.
-
-### Justifying Text with rjust(), ljust(), and center()
-
-`rjust(), ljust()` cho phép thêm vào ký tự ở đầu hoặc cuối một đoạn string.
-Đối số đầu tiên là số lượng ký tự được sử dụng để thêm vào sao cho tổng độ dài của chuỗi bằng với số lượng được nhập. Đối số thứ 2 chính là ký tự được sử dụng, nếu không điền đối số thứ 2, ký tự mặc định được sử dụng là space.
-
-`center()` giúp đặt chuỗi string vào chính giữa thay vì trái hoặc phải.
-
-`strip(), rstrip(), and lstrip()` giúp lược bỏ dấu cách hoặc các ký tự bọc bên ngoài chuỗi string được truyền vào. Một sự lựa chọn khác là điền vào các ký tự ta muốn bỏ ra ngoài chuỗi, đối số được truyền vào chính là các ký tự cần lược bỏ. Thứ tự truyền vào của các ký tự không quan trọng khi thực hiện.
-Ví dụ:
-
-```python
-spam = 'SpamSpamBaconSpamEggsSpamSpam'
-spam.strip('Sam')
-```
-
-#### string.format_map(z)
-
-Trả về giá trị của một key trong một dictionary. Ví dụ:
-
-```python
-# input stored in variable a. 
-a = {'x':'John', 'y':'Wick'} 
-  
-# Use of format_map() function 
-print("{x}'s last name is {y}".format_map(a))
-```
-
-### Copying and Pasting Strings with the pyperclip Module
-
-Thư viện pyperclip giúp ta có thể, một cách nhanh chóng copy một đoạn string vào clipboard của máy tính và/hoặc paste một đoạn văn bản đã được copy từ trước vào python. Ví dụ:
-
-```python
-import pyperclip
-
-
-pyperclip.copy('Hello world!')
-pyperclip.paste()
-```
-
-
-
-Tất cả string method có thể được tìm và tra cứu tại:
-
-https://docs.python.org/3/library/stdtypes.html#string-methods
 
