@@ -1,116 +1,110 @@
 ---
 layout: post
-title: "ML Testing and Validation"
+title: "Các tham số trong mô hình LogisticRegression Sklearn"
 author: "codedaoneu"
 tags: tutorial
 ---
 
 
-## ML Testing là gì?
+## penalty
 
-Không giống như các phương pháp kiểm định phần mềm thông thường và truyền thống, công việc chỉ bao gồm kiểm tra tính chính xác của mã nguồn cũng như kết quả của bộ mã. Phương pháp ML cho phép học dữ liệu, xác định các phương pháp và tự đưa ra quyết định. Đây là một mô hình tự học, có độ phức tạp và mức độ tương đối cao. Nếu một phần mềm truyền thống trả ra lỗi, thường thì các lỗi đó đến từ logic của bộ mã. Tuy nhiên, nếu một ML model trả ra dữ liệu không hợp lý, nó có thể đến từ nhiều nguyên nhân khác nhau:
-- Tính thiên kiến khi training data.
-- Lỗi dữ liệu quá khớp (overfitting).
-- Tính không lường trước được của các biến trong bộ dữ liệu.
+Các loại penalty phổ biến được sử dụng trong Logistic Regression:
+- L1 regularization (Lasso).
+- L2 regularization (Ridge).
+- None: Không sử dụng tham số penalty.
+- elasticnet: Sử dụng cả L1 và L2.
 
-## Tầm quan trọng của ML Testing:
+L1 và L2 là phương pháp chuẩn hoá sử dụng để kiểm soát overfitting trong mô hình. Khi huấn luyện mô hình Logistic Regression, ta thường sử dụng một hàm mất mát có thêm thành phần penalty để giảm overfitting và tăng hiệu suất dự đoán của mô hình. Các loại penalty phổ biến được sử dụng trong Logistic Regression bao gồm L1 regularization (Lasso) và L2 regularization (Ridge).
 
-### Duy trì tính chính xác của model
+## solver
 
-ML model được training bởi dữ liệu lịch sử, và độ chính xác của nó phụ thuộc vào chất lượng của dữ liệu đó. ML model testing giúp nhận dạng các lỗi giữa biến được dự báo và giá trị thực tế trả ra. Đây chính là tính chính xác của model.
+Trong mô hình Logistic Regression, tham số "solver" được sử dụng để chỉ định thuật toán được sử dụng để tối ưu hóa hàm mất mát khi huấn luyện mô hình. Các giá trị phổ biến của tham số "solver" bao gồm:
 
-### Bảo vệ khỏi sự thiên kiến (bias)
+1. "liblinear": Sử dụng thuật toán tối ưu hóa LIBLINEAR, phù hợp cho tập dữ liệu nhỏ hoặc khi cần xử lý đồng thời một số penalty khác nhau (như L1 và L2) hoặc khi yêu cầu chính xác cao.
+2. "newton-cg": Sử dụng phương pháp Newton-Conjugate Gradient, phù hợp cho dữ liệu lớn hơn và không thể xử lý đồng thời nhiều penalty.
+3. "lbfgs": Sử dụng thuật toán tối ưu hóa Limited-memory Broyden-Fletcher-Goldfarb-Shanno, phù hợp cho tập dữ liệu lớn.
+4. "sag": Sử dụng thuật toán tối ưu hóa Stochastic Average Gradient, phù hợp cho tập dữ liệu lớn với nhiều features.
+5. "saga": Sự cải tiến của thuật toán SAG cho cả L1 và L2 penalty, phù hợp cho tập dữ liệu lớn và hỗ trợ parallel computing.
 
-Bias trong ML model có thể trả ra các kết quả không công bằng trong dữ liệu kết quả. Thorough testing có thể làm bộc lộ sự thiên kiến này, dẫn đến các dev có thể xác định được vấn đề và tạo ra các model mang tính công bằng cao hơn.
+Việc lựa chọn thông số "solver" phù hợp giữa các giá trị trên phụ thuộc vào đặc điểm của dữ liệu và yêu cầu của bài toán cụ thể.
 
-### Đáp ứng sự thay đổi của dữ liệu
+## max_iter
 
-Đảm bảo model vẫn hiệu quả với các dữ liệu mới, duy trì sức mạnh dự báo theo thời gian.
+Trong mô hình Logistic Regression, tham số "max_iter" là một tham số quy định số lượng lần lặp tối đa mà thuật toán sẽ thực hiện để tối ưu hóa hàm mất mát. Nếu sau số lần lặp này mà thuật toán chưa hội tụ (tức là chưa đạt được giá trị tối ưu), huấn luyện sẽ dừng và trả về kết quả gần đúng nhất có thể. 
 
-### Nâng cao độ tin cậy
+Tham số "max_iter" quan trọng vì nó giúp kiểm soát thời gian huấn luyện và cũng có thể ngăn ngừa overfitting. Tuy nhiên, nếu giá trị của "max_iter" quá nhỏ, có thể dẫn đến việc thuật toán không hội tụ và mô hình không đạt hiệu suất cần thiết. Do đó, việc thiết lập giá trị hợp lý cho "max_iter" cần được thực hiện cẩn thận. Thường thì giá trị của "max_iter" sẽ được chọn dựa trên kinh nghiệm hoặc thông qua việc sử dụng các phương pháp tinh chỉnh siêu tham số.
 
-Duy trì sức mạnh dự báo của model. Đảm bảo hiệu suất được nâng cao và giảm các rủi ro dự báo sai không lường trước được.
+## C
 
-## Các loại ML Testing
+Trong mô hình Logistic Regression, tham số "C" là một tham số quan trọng điều chỉnh mức độ chuẩn hoá (regularization) trong quá trình huấn luyện mô hình. Tham số "C" được sử dụng để kiểm soát độ cứng của mô hình, ảnh hưởng đến việc mô hình sẽ "tin tưởng" vào dữ liệu huấn luyện đến đâu.
 
-### Unit Testing for Components
+Giá trị của tham số "C" càng lớn, mức độ chuẩn hoá càng ít và mô hình sẽ cố gắng tối ưu hóa đúng hơn trên dữ liệu huấn luyện (có thể dẫn đến overfitting). Ngược lại, nếu "C" nhỏ, mô hình sẽ tin tưởng vào mức độ chung và đơn giản hơn (có thể dẫn đến underfitting).
 
-Giống như các phương pháp kiểm thử truyền thống khác, unit test tập trung vào từng bước riêng lẻ của quá trình training và deploy ML model, ví dụ như các bước:
-- Prepare data
-- Data cleaning
-- Feature extraction
-- Model architecture
-- Hyperparam turning
-- Deploy model
+Như vậy, việc điều chỉnh tham số "C" là một phần quan trọng trong việc điều chỉnh mô hình Logistic Regression để đạt được hiệu suất dự đoán tốt nhất trên tập dữ liệu. Thông thường, giá trị của "C" cần được tinh chỉnh thông qua các phương pháp tinh chỉnh siêu tham số như Grid Search hoặc Random Search để chọn ra giá trị tối ưu cho mô hình.
 
-Mỗi bước cần đảm bảo sự chính xác riêng, việc define các test case ở mỗi bước là việc làm cần thiết và hiệu quả để kiểm thử ML model.
+## dual
 
-### Data Testing và preprocessing
+Trong mô hình Logistic Regression của thư viện scikit-learn, tham số "dual" là một tham số boolean (True hoặc False) quy định phương pháp giải bài toán tối ưu hóa. 
 
-Chất lượng data giữ một vai trò quan trọng trong việc training model. Việc kiểm tra data bao gồm các công việc như đảm bảo tính chính xác, tính thống nhất và toàn vẹn của dữ liệu được đưa vào model. Kiểm định data sẽ bao gồm trong các bước:
-- Data transformation
-- Data normalisation
-- Data cleaning
-- Data loading and limitation.
+Tham số "dual" có ảnh hưởng đến hiệu suất của thuật toán, nhưng thường ít được sử dụng nếu số lượng features (đặc trưng) lớn hơn số lượng mẫu dữ liệu.
 
-### Cross-Validation
+Nếu "dual=True", thuật toán sẽ tối ưu hóa bài toán cực tiểu hóa bằng cách giải hệ phương trình đối ngẫu (dual problem). Đây là phương pháp thích hợp khi số lượng features nhỏ hơn số lượng mẫu dữ liệu.
 
-Là một phương pháp kỹ thuật mạnh mẽ để định lượng hóa mức độ hiệu quả của model. Mức độ hiệu quả này được định lượng bằng cách không cho phép độ chính xác của model phụ thuộc vào dữ liệu đầu vào, nói cách khác, chúng ta hoàn toàn có thể kỳ vọng mức độ chính xác với dữ liệu thực tế ở mức tương tự như mức độ hiệu quả sau khi model được đánh giá bằng phương pháp này.
+Nếu "dual=False", thuật toán sẽ tối ưu hóa trực tiếp bài toán cực tiểu hóa (primal problem). Đây là phương pháp phù hợp khi số lượng features lớn hơn số lượng mẫu dữ liệu.
 
-### Performance Metrics Testing
+Trong hầu hết các trường hợp thông thường, thực hiện mô hình Logistic Regression với tham số "dual=False" là được khuyến nghị. DefaultValue cho tham số "dual" là False.
 
-Lựa chọn phương pháp tiếp cận để đánh giá mức độ hiệu quả của model là phương pháp bắt buộc và được tính toán trước tiên. Metric có thể là accuracy, recall, F1_score... mang ý nghĩa khác nhau đối với từng model. VỚi từng model khác nhau, để đánh giá hiệu quả, trước hết ta cần phải định nghĩa ra một bộ metric hiệu quả để có thể đánh giá model này.
+## tol
 
-### Robustness and Adversarial Testing
+Tham số "tol" trong mô hình Logistic Regression của thư viện scikit-learn là một ngưỡng dừng được sử dụng để kiểm tra sự hội tụ của thuật toán tối ưu hóa. "tol" đại diện cho tolerance và quy định mức độ chấp nhận được cho sự thay đổi trong hàm mất mát giữa các lần cập nhật trọng số trong quá trình huấn luyện. 
 
-Phương pháp này đo lượng mức độ xử lý hiệu quả của model khi nhận một đầu vào không như mong đợi và một cuộc tấn công bất thường. Phương pháp này nhằm đánh giá hành vi của model khi thay đổi một biến đầu vào trở nên bất thường, và gây nhầm lẫn đối với model và người dùng. Mức độ mạnh mẽ của model giống như việc đưa ra các dự báo hợp lý hơn khi nhận các điều kiện đầu vào thách thức hoặc bất thường.
+Khi sự thay đổi trong hàm mất mát giảm dưới ngưỡng "tol", thuật toán sẽ dừng lại vì coi rằng mô hình đã hội tụ đủ. Trong quá trình huấn luyện, nếu giá trị thay đổi của hàm mất mát giữa các lần cập nhật trọng số nhỏ hơn "tol", thuật toán sẽ dừng sớm giúp tiết kiệm thời gian huấn luyện.
 
-### A/B Testing for Deployment
+Một giá trị "tol" thấp có thể dẫn đến thời gian huấn luyện tăng lên, nhưng cung cấp sự chính xác cao hơn. Ngược lại, giá trị "tol" cao có thể giảm thời gian huấn luyện, nhưng cũng có thể giảm chính xác của mô hình.
 
-Triển khai cùng lúc nhiều mô hình khác nhau và đánh giá hiệu quả của từng mô hình so với dữ liệu thực tế để tìm ra mô hình hiệu quả nhất. Đánh giá trên nhiều mô hình khác nhau để đảm bảo có ít nhất một mô hình perform hiệu quả với dữ liệu thực tế, và đảm bảo các kết quả không có sự bất thường xảy ra.
+Việc chọn giá trị thích hợp cho "tol" thường phụ thuộc vào độ chính xác mà bạn muốn đạt được và cũng có thể được tinh chỉnh thông qua việc thử nghiệm và đánh giá hiệu suất trên tập dữ liệu kiểm tra. DefaultValue cho tham số "tol" là 1e-4.
 
-### Bias Testing
+## fit_intercept
 
-Đánh giá sự thiên kiến. Đảm bảo model trả ra kết quả công bằng với mọi dữ liệu được đưa vào mô hình.
+Trong mô hình Logistic Regression của thư viện scikit-learn, tham số "fit_intercept" là một tham số boolean (True hoặc False) xác định xem mô hình sẽ học tham số chệch (bias) hay không.
 
-## Một số Metrics đo lường ML Models
+Nếu "fit_intercept=True", mô hình sẽ học một giá trị chệch (bias) trong quá trình huấn luyện. Bias là giá trị cố định được thêm vào kết quả của hàm dự đoán để điều chỉnh giá trị dự đoán chính xác hơn với dữ liệu thực tế.
 
-- Accuracy
-- Precision
-- Sensitivity
-- Specificity
-- Area Under the ROC Curve (AUC-ROC)
-- Mean Absolute Error (MAE)
-- Root Mean Squared Error (RMSE)
+Nếu "fit_intercept=False", mô hình sẽ không học giá trị chệch (bias) và giả định rằng mô hình đi qua gốc tọa độ (0,0) trong không gian đặc trưng.
 
-## Tổng kêt
+Việc sử dụng giá trị chệch (bias) thường giúp cải thiện khả năng dự đoán của mô hình trên tập dữ liệu thực tế. Thông thường, nếu không có lý do đặc biệt, việc cài đặt "fit_intercept=True" là được khuyến nghị.
 
-Trên đây là một số loại hình và phương pháp để kiểm thử ML model, mỗi phương pháp sẽ xử lý một loạt các vấn đề khác nhau mà model có thể gặp phải. Ngoài ra, theo thời gian thì model có thể suy giảm độ chính xác, hoặc thậm chí trở nên không hiệu quả do dữ liệu thay đổi theo thời gian, vì vậy việc maintain model thường xuyên là việc làm hết sức quan trọng nhằm duy trì và cập nhật kịp thời, đảm bảo độ chính xác, tin cậy theo thời gian. Để hỗ trợ cho công việc, ta có thể sử dụng một số framework sau:
-- TensorFlow
-- PyTorch
-- Scikit-learn
-- Fairlearn
+DefaultValue cho tham số "fit_intercept" là True.
 
-Ngoài ra, chúng ta cũng cần quan tâm đến các vấn đề khác như:
-- Data Privacy and Security
-- Fairness and Bias
-- Transparency and Explainability
-- Accountability and Liability
-- Human-Centric Design
-- Consent and Data Usage
-- Long-Term Effects
-- Collaborative Oversight
+## intercept_scaling
 
-Các vấn đề trên giúp việc kiểm thử model trở nên an toàn và thực tế hơn trong điều kiện làm việc của một công ty, hoặc các team khác nhau.
+Trong mô hình Logistic Regression của thư viện scikit-learn, tham số "intercept_scaling" là một hệ số nhân được áp dụng cho intercept. Tính năng này cho phép cân nhắc mức độ ảnh hưởng của intercept đối với các trọng số của mô hình.
 
-Link tham khảo:
+Khi "intercept_scaling" được đặt khác 1, intercept sẽ được nhân với giá trị "intercept_scaling" trước khi tính toán hàm mất mát. Điều này có thể giúp kiểm soát mức độ ảnh hưởng của intercept đối với việc huấn luyện mô hình.
 
-- https://www.testingxperts.com/blog/ml-testing
-- https://deepchecks.com/how-to-test-machine-learning-models/
-- https://censius.ai/blogs/model-testing-types-methods-and-best-practices
-- https://research.aimultiple.com/ml-model-testing/
-- https://www.markovml.com/blog/model-testing
-- https://www.design-reuse.com/articles/55045/exploring-machine-learning-testing-and-its-tools-and-frameworks.html
-- https://www.sciencedirect.com/science/article/pii/S0920410517308094
+Mặc định, giá trị của "intercept_scaling" là 1. Nếu không có nhu cầu cụ thể, bạn có thể giữ giá trị mặc định này. Tuy nhiên, nếu muốn điều chỉnh vai trò của intercept trong mô hình, bạn có thể thay đổi giá trị của "intercept_scaling" để đạt được hiệu quả tối ưu trong quá trình huấn luyện.
 
+Việc điều chỉnh "intercept_scaling" thường không phổ biến và chỉ được sử dụng trong trường hợp cụ thể của việc tinh chỉnh mô hình Logistic Regression.
 
+## class_weight
+
+Trong mô hình Logistic Regression của thư viện scikit-learn, tham số "class_weight" cho phép bạn cân chỉnh trọng số của các lớp trong mô hình. Điều này hữu ích khi dữ liệu không cân bằng, với một số lớp có số lượng mẫu ít hơn so với các lớp khác.
+
+Có thể đặt "class_weight" bằng một số giá trị khác nhau như:
+- "class_weight=None": Mọi lớp được coi là có cùng trọng số.
+- "class_weight='balanced'": Cân bằng tỷ lệ số lượng mẫu giữa các lớp tự động.
+- "class_weight={class_label: weight}": Đối với mỗi nhãn lớp, bạn có thể xác định trọng số cụ thể.
+
+Việc sử dụng "class_weight" đúng cách có thể giúp cải thiện khả năng dự đoán của mô hình trên dữ liệu không cân bằng. Bằng cách tăng trọng số của các lớp thiểu số, mô hình có thể học tốt hơn từ các lớp ít mẫu hơn.
+
+Nên xác định xem có cần thiết điều chỉnh trọng số của các lớp bằng "class_weight" dựa trên sự không cân bằng của dữ liệu của bạn để cải thiện hiệu suất của mô hình Logistic Regression.
+
+## random_state
+
+Trong mô hình Logistic Regression của thư viện scikit-learn, tham số "random_state" được sử dụng để cài đặt seed cho quá trình tạo các giá trị ngẫu nhiên trong quá trình huấn luyện mô hình. Seed này đảm bảo rằng các kết quả huấn luyện sẽ được tái tạo một cách đáng tin cậy nếu bạn chạy mô hình nhiều lần với cùng một giá trị "random_state".
+
+Khi bạn cung cấp một giá trị cụ thể cho "random_state", mô hình sẽ sử dụng seed đó để tạo ngẫu nhiên các tham số ban đầu và tạo ra các phân chia ngẫu nhiên của dữ liệu (nếu áp dụng). Điều này giúp kiểm soát tính ngẫu nhiên trong quá trình huấn luyện và đảm bảo kết quả kiểm tra có thể tái tạo.
+
+Nếu "random_state" không được cung cấp hoặc được đặt là None, mỗi lần chạy mô hình có thể tạo ra kết quả khác nhau, giữa các lần chạy khác nhau. Điều này có thể gây khó khăn trong việc so sánh kết quả giữa các lần thử nghiệm.
+
+Vì vậy, khi bạn muốn kết quả huấn luyện có thể tái tạo và so sánh dễ dàng, hãy cung cấp một giá trị cụ thể cho "random_state". Điều này sẽ giúp đảm bảo tính xác định và đáng tin cậy của quá trình huấn luyện mô hình Logistic Regression
