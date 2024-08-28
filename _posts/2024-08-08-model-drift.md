@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Scorecard Development"
+title: "Model Drift"
 author: "codedaoneu"
 tags: machine learning
 ---
