@@ -9,4 +9,4 @@ Cũng như các model khác, việc triển khai một model, trên thực tế 
 
 ## Explore Data
 
-Công việc cần làm trước khi bắt đầu xây dựng một datamodel là bắt đầu với việc khám phá dữ liệu mẫu. Bắt đầu với một số các chỉ số thống kê đơn giản như phân phối của các giá trị, trung bình/trung vị, dữ liệu thiếu, khoảng giá trị của dữ liệu cho mỗi biến. 
+Công việc cần làm trước khi bắt đầu xây dựng một datamodel là bắt đầu với việc khám phá dữ liệu mẫu. Bắt đầu với một số các chỉ số thống kê đơn giản như phân phối của các giá trị, trung bình/trung vị, dữ liệu thiếu, khoảng giá trị của dữ liệu cho mỗi biến. Các công việc này có thể mang lại các ý tưởng tốt về business, đồng thời
