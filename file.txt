@@ -1,0 +1,360 @@
+WITH 
+customer AS (
+	SELECT 
+		id customer_id,
+		phone_number,
+		full_name,
+		active,
+		customer_code,
+		dda_code,
+		avatar,
+		referral_code,
+		ewa_longest_bill_over_due_day, 
+		ewa_due_debt_amount,
+		ewa_over_due_debt_amount, 
+		ewa_status
+	FROM ewa.customer
+)
+, organization AS (
+	SELECT 
+		tb1.id organization_id,
+		tb1.partner_id,
+		tb1.parent_id,
+		tb1."name" organization_name,
+		tb1.code organization_code,
+		split_part(tb1.path,'/',2) as org_lv1,
+		split_part(tb1.path,'/',3) as org_lv2,
+		split_part(tb1.path,'/',4) as org_lv3,
+		split_part(tb1.path,'/',5) as org_lv4,
+		split_part(tb1.path,'/',6) as org_lv5
+	FROM ewa.organization_structure tb1 
+)
+, employee AS (
+	SELECT 
+		tb1.id customer_id,
+        tb3.first_name || ' ' || tb3.middle_name || ' ' || tb3.last_name customer_fullname,
+		tb2.employee_id,
+		tb3.code employee_code,
+		tb2.active,
+		tb2.created_at service_active_created_at,
+		tb3.working_status, 
+		tb3.partner_id, 
+		tb1.phone_number mobile_phone, 
+		tb1.created_at customer_created_at, 
+		tb1.customer_code,
+		tb3.created_at employee_created_at,
+		tb3.bank_acc_number,
+		tb4.trading_name bank_name,
+		tb5.organization_id,
+		tb5.organization_name,
+		tb5.organization_code,
+		tb5.org_lv1,
+		tb5.org_lv2,
+		tb5.org_lv3,
+		tb5.org_lv4,
+		tb5.org_lv5
+	FROM ewa.customer tb1
+	LEFT JOIN ewa.customer_verification tb2 ON tb1.id = tb2.customer_id
+	LEFT JOIN ewa.employee tb3 ON tb2.employee_id = tb3.id
+	LEFT JOIN ewa.bank tb4 ON tb4.id = tb3.bank_id
+	LEFT JOIN organization tb5 ON tb3.organization_structure_id = tb5.organization_id
+)
+, partner_info AS (
+	SELECT 
+		tb2.id partner_id, 
+		tb2.short_name, 
+		tb1.status, 
+		tb1.onboarded_month, 
+		tb1.total_employee_pool,
+		tb1."type", 
+		tb1.base, 
+		tb1.sale_person, 
+		tb1.sale_team_name, 
+		tb1.is_ewa04,
+		CASE 
+			WHEN tb2.debt_collection = 1 AND tb2.onboard_method = 0 AND tb2.debt_payment_method = 2 THEN 'EWA01'
+			WHEN tb2.debt_collection = 2 AND tb2.onboard_method = 1 AND tb2.debt_payment_method = 1 THEN 'EWA02'
+			WHEN tb2.debt_collection = 2 AND tb2.onboard_method = 2 AND tb2.debt_payment_method = 1 THEN 'EWA03'
+			WHEN tb2.debt_collection = 2 AND tb2.onboard_method = 1 AND tb2.debt_payment_method = 2 THEN 'EWA04'
+			WHEN tb2.debt_collection = 2 AND tb2.onboard_method = 1 AND tb2.debt_payment_method = 0 THEN 'EWA02 - EWA04'
+			WHEN tb2.debt_collection = 2 AND tb2.onboard_method = 2 AND tb2.debt_payment_method = 0 THEN 'EWA03 - EWA04'
+		END partner_type
+	FROM ewa.partner_employee_pool tb1
+	RIGHT JOIN ewa.partner tb2 ON tb1.company_id = tb2.id
+)
+,customer_onboard AS (
+	SELECT
+		tb1.id, tb2.ewa_id customer_id, partner_id, tb1.created_at customer_onboard_created_date
+	FROM gimo_customer.customer_onboard tb1
+	LEFT JOIN gimo_customer.customer tb2 ON tb1.customer_id = tb2.id
+)
+, customer_onboard_form AS (
+	SELECT
+		id, customer_onboard_id, step_id, created_at form_created_date
+	FROM gimo_customer.customer_onboard_form tb1
+)
+, form_1_status AS (
+	SELECT 
+	customer_onboard_id, status, (created_at + INTERVAL '7 hours')::date form_1_status_created_date
+	FROM gimo_customer.customer_onboard_status tb1
+	WHERE step_id = 1
+)
+, form_2_status AS (
+	SELECT customer_onboard_id, status, created_at form_2_status_created_date
+	FROM gimo_customer.customer_onboard_status tb1
+	WHERE step_id = 2 AND status IS NOT NULL
+)
+, form_created_log AS (
+	SELECT
+		customer_onboard_id, customer_onboard_form_id, created_at form_created_date
+	FROM gimo_customer.customer_onboard_log
+	WHERE 1=1
+	AND action_type = 0
+	AND resource_type = 0
+)
+, form_approved_log AS (
+	SELECT 
+		customer_onboard_id, customer_onboard_form_id, created_at form_approved_date
+	FROM gimo_customer.customer_onboard_log
+	WHERE 1=1
+	AND action_type = 3
+	AND resource_type = 0
+)
+, gimo_approved_log AS (
+	SELECT 
+		customer_onboard_id, customer_onboard_form_id, created_at GIMO_approved_date
+	FROM gimo_customer.customer_onboard_log tb1
+	WHERE 1=1
+		AND tb1.resource_type = 2 
+		AND tb1.action_type = 3
+)
+, form_1_submited AS (
+	SELECT
+		customer_onboard.customer_id, 
+		customer_onboard.partner_id , 
+		MIN(COALESCE(form_created_log.form_created_date, 
+				 -- customer_onboard.customer_onboard_created_date, 
+				 form_1_status.form_1_status_created_date)) form_1_submited_date
+	FROM customer_onboard
+	LEFT JOIN customer_onboard_form ON customer_onboard.id = customer_onboard_form.customer_onboard_id AND customer_onboard_form.step_id = 1
+	LEFT JOIN form_created_log ON customer_onboard_form.id = form_created_log.customer_onboard_form_id
+	LEFT JOIN form_1_status ON customer_onboard.id = form_1_status.customer_onboard_id
+	WHERE customer_onboard_form.step_id = 1
+	GROUP BY
+		customer_onboard.customer_id, 
+		customer_onboard.partner_id
+) 
+, form_2_submited AS (
+	SELECT
+		customer_onboard.customer_id, 
+		customer_onboard.partner_id , 
+		min(COALESCE(form_created_log.form_created_date, 
+				 -- customer_onboard.customer_onboard_created_date, 
+				 form_2_status.form_2_status_created_date)) form_2_submited_date
+	FROM customer_onboard
+	LEFT JOIN customer_onboard_form ON customer_onboard.id = customer_onboard_form.customer_onboard_id AND customer_onboard_form.step_id = 2
+	LEFT JOIN form_created_log ON customer_onboard_form.id = form_created_log.customer_onboard_form_id
+	LEFT JOIN form_2_status ON customer_onboard.id = form_2_status.customer_onboard_id
+	WHERE customer_onboard_form.step_id = 2
+	GROUP BY 
+		customer_onboard.customer_id,
+		customer_onboard.partner_id 
+) 
+, approved_form_1 AS (
+	SELECT
+		customer_onboard.customer_id, 
+		customer_onboard.partner_id , 
+		MIN(COALESCE(form_approved_log.form_approved_date, 
+				 -- customer_onboard.customer_onboard_created_date, 
+				 form_1_status.form_1_status_created_date)) created_at
+	FROM customer_onboard
+	LEFT JOIN customer_onboard_form ON customer_onboard.id = customer_onboard_form.customer_onboard_id AND customer_onboard_form.step_id = 1
+	LEFT JOIN form_approved_log ON customer_onboard_form.id = form_approved_log.customer_onboard_form_id
+	LEFT JOIN form_1_status ON customer_onboard.id = form_1_status.customer_onboard_id  AND form_1_status.status <> 1
+	WHERE customer_onboard_form.step_id = 1
+	GROUP BY
+		customer_onboard.customer_id, 
+		customer_onboard.partner_id
+) 
+, approved_form_2 AS (
+	SELECT
+		customer_onboard.customer_id, 
+		customer_onboard.partner_id , 
+		min(COALESCE(form_approved_log.form_approved_date, 
+--				  customer_onboard.customer_onboard_created_date, 
+				 form_2_status.form_2_status_created_date)) created_at
+	FROM customer_onboard
+	LEFT JOIN customer_onboard_form ON customer_onboard.id = customer_onboard_form.customer_onboard_id AND customer_onboard_form.step_id = 2
+	LEFT JOIN form_approved_log ON customer_onboard_form.id = form_approved_log.customer_onboard_form_id
+	LEFT JOIN form_2_status ON customer_onboard.id = form_2_status.customer_onboard_id AND form_2_status.status = 2
+	WHERE customer_onboard_form.step_id = 2
+	GROUP BY 
+		customer_onboard.customer_id,
+		customer_onboard.partner_id 
+)
+, gimo_approved as (
+	SELECT
+		tb3.ewa_id customer_id, tb1.partner_id, min(tb2.created_at) created_at 
+	FROM gimo_customer.customer_onboard tb1
+	LEFT JOIN gimo_customer.customer_onboard_log tb2 ON tb1.id = tb2.customer_onboard_id AND tb2.resource_type = 2 AND tb2.action_type = 3
+	INNER JOIN gimo_customer.customer tb3 ON tb1.customer_id = tb3.id
+	WHERE 1=1
+	GROUP BY tb3.ewa_id, tb1.partner_id
+)
+, dda AS (
+	SELECT tb2.customer_code, min(tb1.created_at) first_dda_approved
+	FROM ewa.customer_dda_registration tb1
+	INNER JOIN ewa.customer tb2 ON tb1.customer_code = tb2.dda_code
+	WHERE 1=1
+--	AND tb1.active = 1
+	GROUP BY tb2.customer_code
+)
+, current_dda AS (
+        SELECT customer_code, current_dda_status
+                FROM (
+                        SELECT 
+                                tb1.customer_code, 
+                                tb3.dda_status current_dda_status, 
+                                ROW_NUMBER() OVER (PARTITION BY tb3.mobile_phone ORDER BY tb3.created_at DESC ) dda_rank
+                        FROM ewa.customer   tb1
+                        LEFT JOIN  ewa.customer_verification tb2 ON tb1.id = tb2.customer_id
+                        LEFT JOIN  ewa.employee tb3 ON tb2.employee_id = tb3.id
+                        WHERE 1=1
+                ) tb 
+        WHERE tb.dda_rank = 1
+) 
+, ekyc AS (
+    SELECT ewa_id customer_id,  created_at
+        FROM (
+            SELECT tb1.*, tb2.ewa_id, ROW_NUMBER() OVER (PARTITION BY customer_id ORDER BY tb1.created_at DESC) ekyc_created_row_num
+            FROM gimo_customer.customer_approved_ekyc tb1
+            LEFT JOIN gimo_customer.customer tb2 ON tb1.customer_id = tb2.id
+        )
+        WHERE ekyc_created_row_num = 1
+)
+, epm AS (
+	SELECT 
+	customer_id, partner_id, min(created_at) epm_date, 
+	min(CASE WHEN transaction_type = 'WITHDRAWAL' THEN created_at END) cash_emp_date,
+	min(CASE WHEN transaction_type = 'TOPUP_MOBILE' THEN created_at END) topup_emp_date
+	FROM ewa.ewa_contract
+	WHERE status=11
+	GROUP BY customer_id, partner_id
+)
+, ekyc_status AS (
+	SELECT 
+		customer_id, 
+		status ekyc_status, 
+		partner_status ekyc_partner_status
+	FROM (
+		SELECT 
+			tb2.ewa_id customer_id, 
+			tb1.status, 
+			tb1.partner_status, 
+			RANK() OVER (PARTITION BY tb2.ewa_id ORDER BY tb1.created_at DESC) ekyc_rank
+		FROM gimo_customer.ekyc_request tb1
+		LEFT JOIN gimo_customer.customer tb2 ON tb1.customer_id = tb2.id
+		) tb
+	WHERE tb.ekyc_rank = 1
+)
+,ekyc_request AS (
+	SELECT 
+		tb2.ewa_id customer_id, 
+		min(tb1.created_at) first_ekyc_submited_date
+	FROM gimo_customer.ekyc_request tb1
+	LEFT JOIN gimo_customer.customer tb2 ON tb1.customer_id = tb2.id
+	GROUP BY tb2.ewa_id
+)
+, dataset AS (
+SELECT 
+	customer.customer_id                                                          customer_id, 
+	customer.ewa_longest_bill_over_due_day, 
+	customer.ewa_due_debt_amount,
+	customer.ewa_over_due_debt_amount, 
+	customer.ewa_status,
+	COALESCE(employee.customer_fullname,customer.full_name)                       customer_fullname,
+	employee.bank_acc_number,
+	employee.bank_name,
+	employee.employee_id                                                          employee_id, 	
+    employee.employee_code,
+	employee.organization_code,
+	employee.organization_name,
+	employee.org_lv1,
+	employee.org_lv2,
+	employee.org_lv3,
+	employee.org_lv4,
+	employee.org_lv5,
+    employee.working_status                                                       working_status,
+	COALESCE(form_1_submited.partner_id,  
+				approved_form_1.partner_id,
+				approved_form_2.partner_id,
+				gimo_approved.partner_id,
+				epm.partner_id, 
+				employee.partner_id)                                              partner_id,
+	customer.phone_number                                                         mobile_phone,
+	customer.customer_code                                                        customer_code,
+	current_dda.current_dda_status                                                current_dda_status,
+	(form_2_submited_date + INTERVAL '7 hours') :: date                           form_2_submited_date,
+	(employee.employee_created_at + INTERVAL '7 hours') :: date                   employee_created_at,
+	(employee.service_active_created_at + INTERVAL '7 hours') :: date             service_active_created_at,
+	(employee.customer_created_at + INTERVAL '7 hours') :: date                   customer_created_at,
+	(form_1_submited.form_1_submited_date + INTERVAL '7 hours') :: date           form_1_submited_date,
+	(approved_form_1.created_at + INTERVAL '7 hours') :: date                     form_1_approved_date,
+	(approved_form_2.created_at + INTERVAL '7 hours') :: date                     form_2_approved_date,
+	(gimo_approved.created_at + INTERVAL '7 hours') :: date                       gimo_approved_date,
+	(ekyc.created_at + INTERVAL '7 hours') :: date                                ekyc_approved_date,
+	(first_dda_approved + INTERVAL '7 hours'):: date                              first_dda_approved,
+	(epm.epm_date + INTERVAL '7 hours'):: date                                    epm_date,
+	(epm.cash_emp_date + INTERVAL '7 hours'):: date                               first_cash_date,
+	(epm.topup_emp_date + INTERVAL '7 hours'):: date                              first_topup_date,
+	(ekyc_request.first_ekyc_submited_date + INTERVAL '7 HOURS')::date            first_ekyc_submited_date,
+	ekyc_status.ekyc_partner_status                                               ekyc_partner_status,
+	ekyc_status.ekyc_status                                                       ekyc_status
+FROM customer
+LEFT JOIN form_1_submited ON customer.customer_id = form_1_submited.customer_id -- AND employee.partner_id = gm.partner_id
+LEFT JOIN dda ON customer.customer_code = dda.customer_code
+LEFT JOIN current_dda ON customer.customer_code = current_dda.customer_code
+LEFT JOIN employee ON customer.customer_id = employee.customer_id AND employee.partner_id = form_1_submited.partner_id
+LEFT JOIN form_2_submited ON form_2_submited.customer_id = customer.customer_id AND form_2_submited.partner_id = form_1_submited.partner_id 
+LEFT JOIN approved_form_1 ON customer.customer_id = approved_form_1.customer_id AND form_1_submited.partner_id = approved_form_1.partner_id 
+LEFT JOIN approved_form_2 ON form_1_submited.partner_id = approved_form_2.partner_id AND customer.customer_id = approved_form_2.customer_id
+LEFT JOIN gimo_approved ON form_1_submited.partner_id = gimo_approved.partner_id AND customer.customer_id = gimo_approved.customer_id
+LEFT JOIN ekyc ON customer.customer_id = ekyc.customer_id
+LEFT JOIN epm ON employee.partner_id = epm.partner_id AND customer.customer_id = epm.customer_id
+LEFT JOIN ekyc_status ON customer.customer_id = ekyc_status.customer_id
+LEFT JOIN ekyc_request ON customer.customer_id = ekyc_request.customer_id
+)
+SELECT
+	customer_code,
+	partner_id,
+	employee_id,
+	customer_fullname,
+	organization_code,
+	org_lv1,
+	org_lv2,
+	org_lv3,
+	org_lv4,
+	org_lv5,
+	working_status,
+	ewa_status,
+	ewa_longest_bill_over_due_day,
+	ewa_due_debt_amount,
+	ewa_over_due_debt_amount,
+	current_dda_status,
+	first_dda_approved,
+	form_1_submited_date,
+	form_1_approved_date,
+	form_2_submited_date,
+	form_2_approved_date,
+	gimo_approved_date,
+	ekyc_approved_date,
+	ekyc_partner_status,
+	first_ekyc_submited_date,
+	ekyc_status,
+	epm_date,
+	first_cash_date,
+	first_topup_date,
+	employee_created_at,
+	service_active_created_at,
+	customer_created_at
+FROM dataset

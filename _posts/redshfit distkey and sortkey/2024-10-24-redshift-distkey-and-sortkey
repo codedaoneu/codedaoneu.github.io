@@ -1,0 +1,11 @@
+---
+layout: post
+title: "Các loại key trong redshift"
+author: "codedaoneu"
+tags: tutorial
+---
+
+AUTO distribution
+
+Với loại phân phối AUTO, redshift sẽ tự động điều chỉnh loại phân phối theo tình hình. Ví dụ:
+
