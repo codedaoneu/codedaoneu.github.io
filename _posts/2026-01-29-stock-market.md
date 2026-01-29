@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Stock Market - Weekly update"
+title: "Stock Market - Weekly update - 01"
 author: "codedaoneu"
 tags: mystockself
 ---
