@@ -28,3 +28,10 @@ Là một phiên có khối lượng đồng đều vào các timeframe 5 phút,
 
 Trong xu hướng xác định, thị trường sẽ bộc lộ thông tin thông qua các phản ứng tự nhiên. Cần chú ý vào khối lượng và mức độ hồi phục và so sánh các lần diễn ra liên tiếp xem mức độ mạnh, ảnh hưởng của nó ra sao đến giá cổ phiếu.
 
+# Cách tư duy đúng 
+
+Không sa đà vào việc dự đoán các phiên tiếp theo, tuy nhiên hãy hình dung ra các kịch bản có thể xảy ra, từ đó đưa ra các nhận định về tình hình thị trường, lực cung cầu cũng như các tác động đến giá cổ phiếu trong tương lai, từ đó đưa ra các quyết định đầu tư đúng. Phiên sàn này tuy đau nhưng cũng bộc lộ nhiều thông tin đáng lưu ý.
+
+# Các phiên giao dịch cực đoan.
+
+Với các phiên sàn toàn thị trường, có thể theo dõi khối lượng dư bán để nhận định sức mạnh thị trường, khối lượng bị đem bán cũng như cách mà cổ phiếu sàn để xem việc hấp thụ cổ phiếu trong tình trạng cực đoan diễn ra như thế nào.
