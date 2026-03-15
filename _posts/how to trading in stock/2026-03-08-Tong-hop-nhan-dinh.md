@@ -35,3 +35,7 @@ Không sa đà vào việc dự đoán các phiên tiếp theo, tuy nhiên hãy 
 # Các phiên giao dịch cực đoan.
 
 Với các phiên sàn toàn thị trường, có thể theo dõi khối lượng dư bán để nhận định sức mạnh thị trường, khối lượng bị đem bán cũng như cách mà cổ phiếu sàn để xem việc hấp thụ cổ phiếu trong tình trạng cực đoan diễn ra như thế nào.
+
+# Theo dõi dòng tiền của một danh mục
+
+Để theo dõi dòng tiền ra vào một danh mục, ta cần theo dõi mức vốn hóa của nó thông qua khối lượng tiền tệ mà nó đang giao dịch trên thị trường, chính khối lượng tiền tệ này sẽ phản ánh mức độ ra vào thị trường của một danh mục, từ đó xác định được dòng tiền đang di chuyển như thế nào của các danh mục thị trương, ngành. 
