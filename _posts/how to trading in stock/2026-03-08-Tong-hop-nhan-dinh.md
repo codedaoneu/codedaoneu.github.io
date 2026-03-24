@@ -39,3 +39,65 @@ Với các phiên sàn toàn thị trường, có thể theo dõi khối lượn
 # Theo dõi dòng tiền của một danh mục
 
 Để theo dõi dòng tiền ra vào một danh mục, ta cần theo dõi mức vốn hóa của nó thông qua khối lượng tiền tệ mà nó đang giao dịch trên thị trường, chính khối lượng tiền tệ này sẽ phản ánh mức độ ra vào thị trường của một danh mục, từ đó xác định được dòng tiền đang di chuyển như thế nào của các danh mục thị trương, ngành. 
+
+# Hành động trên thị trường chứng khoán
+
+Loại bỏ yếu tố cảm tính trong hành động trên thị trường chứng khoán. Qua một thời gian tham gia và ở lại với thị trường, tôi nhận thấy rằng mặc dù bản thân đã có những nhận định và bắt đầu hình thành phương pháp tư duy trên thị trường, tuy nhiên những action thực tế lại vô cùng cảm tính. Những hành động quan trọng trên thị trường chính là các hành động xác lập hoặc loại bỏ vị thế, chính là các hành động mua bán trên thị trường chứng khoán, lại được thực hiện một cách vô cùng bột phát và thiếu kỷ luật, mang lại rất nhiều cảm xúc tiêu cực sau đó.
+
+Để có thể hành động đúng trên thị trường, cần xác định được mức độ quan trọng của tất cả các hành động liên quan đến việc tham gia vào thị trường chứng khoán, xác định nguyên tắc khi hành động và tuân theo nguyên tắc đó. Hiện tại, các hành động của tôi trên thị trường bao gồm:
+
+- Xem bảng giá vào các khoảng thời gian trong ngày.
+- Xem bảng giá vào thời gian kết thúc phiên giao dịch.
+- Tổng hợp nhận định cá nhân vào cuối mỗi tuần giao dịch.
+- Mua, bán chứng khoán.
+- Tham gia một số khóa học về đầu tư.
+- Xây dựng công cụ theo dõi thị trường chứng khoán cho cá nhân.
+
+Qua một thời gian theo dõi bản thân mình khi tham gia thị trường, tôi thấy cần phải xác lập nguyên tắc đầu tiên là chỉ mua và bán chứng khoán khi đã có đầy đủ nhận định về tình hình, không phải là một quyết định gia tâng vị thế một cách đột ngột hoặc bán một cách đầy cảm tính. 
+
+```
+Nguyên tắc 1: Mua và bán chứng khoán là hành động duy nhất và trực tiếp ảnh hưởng đến kết quả. Chỉ thực hiện khi đã đưa ra đầy đủ nhận định.
+```
+
+```
+Nguyên tắc 2: Có thể để cảm xúc bản thân trở nên nuối tiếc, tham vọng, sợ hãi sau khi đưa ra quyết định. Tuy nhiên luôn giữ vứng nguyên tắc 1.
+```
+
+```
+Nguyên tắc 3: Quyết định có thể bị sai lầm và dẫn đến mất mát, đó là điều bình thường khi tham gia thị trường. Hãy cho phép bản thân sai lầm và học hỏi từ các sai lầm đó.
+```
+
+# Vị thế tâm lý trên thị trường chứng khoán
+
+Tham gia trở lại vào thị trường đúng lúc nó đang đi xuống, đây có lẽ là điều may mắn của tôi. Để các hành động của mình trở nên đúng đắn, ngoài việc vào một vị thế cổ phiếu, tôi cân nhắc thêm vị thế tâm lý của mình nếu mình vào một lệnh tại một thời điểm nhất định trên thị trường. Vị thế tâm lý được hình thành khi nhận định cá nhân được tổng hợp đầy đủ, và diễn biến trên thị trường cho thấy vị thế về tâm lý tương đối ổn định. Cần cân nhắc đến các yếu tố sau để gia tăng vị thế về tâm lý cho bản thân:
+
+- Tình hình chung của thị trường đang ở giai đoạn nào? Cần phân tích kỹ xu hướng thị trường.
+- Bối cảnh chính trị quốc tế, thứ có thể ảnh hưởng đến thị trường hiện tại đang có vấn đề gì đặc biệt không.
+- Diễn biến của các kênh đầu tư khác, thứ có thể ảnh hưởng đến cung cầu trên thị trường.
+- Giai đoạn giá và tâm lý của nhóm ngành của cổ phiếu.
+- Giai đoạn giá và tâm lý của các nhà đầu tư đang có vị thế trong cổ phiếu đó.
+- Hoạt động kinh doanh của bản thân công ty có gì bất lợi hoặc thuận lợi, khác biệt không.
+
+Có rất nhiều yếu tố để có thể hoàn thiện được yếu tố tâm lý khi thực hiện giao dịch. Hãy lựa chọn thời điểm vào thị trường sao cho vị thế tâm lý được đảm bảo, nếu không bản thân rất có thể sẽ rơi vào trạng thái hoảng loạn của đám đông.
+
+Tương tự như vậy, hãy thoát ra khỏi thị trường nếu yếu tố tâm lý bất lợi, điều này có thể ảnh hưởng đến lợi nhuận hoặc mất mát, tuy nhiên yếu tố tâm lý sẽ luôn được đảm bảo nếu như bản thân thấy được sự chắc chắn, tạo nền tảng cho các vị thế tiếp theo trên thị trường.
+
+``` 
+Nguyên tắc 4: Hành động khi thấy vị thế về tâm lý thay đổi. Khi đang ở trong vị thế, luôn thoát ra ngoài để đảm bảo rủi ro tâm lý. Khi ở ngoài thị trường, luôn cân nhắc đến vị thế về tâm lý khi tham gia trở lại.
+```
+
+Mức độ khó của việc cân nhắc vào thị trường và ra khỏi thị trường là tương đương nhau, không có cái nào dễ hơn và rủi ro cũng là tương đương. Trước khi quyết định, hãy xác định rõ các rủi ro về mặt tâm lý khi tham gia hoặc rời khỏi thị trường. Một ví dụ là khi tôi thoát khỏi vị thế trading ngắn hạn cổ phiếu TPB sau khi đã bỏ qua 10% lợi nhuận (thực ra đã có nhận định về giá sẽ đi xuống trở lại nhưng tôi đã không đủ quyết đoán để chốt lời), tôi thoát ra khi vừa hòa vốn nhưng lại có cảm giá cực kỳ yên tâm với vị thế tâm lý lúc đó. Hoàn toàn không có chút nghi ngờ gì về quyết định của mình.
+Tiếp theo, khi bán vị thế MSN, đây là một quyết định khá cảm tính tuy nhiên tôi thấy được sự chắc chắn và lấy lại thanh khoản của tài khoản sau khi đã bán các vị thế không có lợi về yếu tố tâm lý.
+
+# Bài toán đầu tư & quản lý tài sản lớn
+
+Thực chất, để hiểu được bản chất của trò chơi tiền tệ, cần nhìn được bức tranh chung của tất cả các loại tài sản mà dòng tiền có thể đổ vào, khi đó ta mới thấy rõ được nguyên nhân mà thị trường đi lên hay xuống. Để đảm bảo việc đầu tư cá nhân được thuận lợi, việc phân bổ vào một kênh đầu tư duy nhất là chưa thực sự khả thi. Chúng ta cần phân bổ ra nhiều kênh khác nhau nhu:
+
+- Tiền gửi ngân hàng
+- Vàng
+- Chứng khoán
+- BĐS
+- Ngoại tệ
+
+Và trong tương lai, có thể còn nhiều loại tài sản khác nữa. Tuy nhiên cần tìm hiểu bản chất chung của chúng, và phản ứng của nó trong các thời kỳ khác nhau. Việc cơ cấu danh mục không chỉ là cơ cấu danh mục trong 1 kênh đầu tư, mà còn là cơ cấu danh mục tại toàn bộ các kênh đầu tư khác nhau để đảm bảo luôn có ít nhất 1 hoặc nhiều phần trong danh mục luôn sinh lời.
+
