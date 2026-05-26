@@ -101,3 +101,68 @@ Thực chất, để hiểu được bản chất của trò chơi tiền tệ, 
 
 Và trong tương lai, có thể còn nhiều loại tài sản khác nữa. Tuy nhiên cần tìm hiểu bản chất chung của chúng, và phản ứng của nó trong các thời kỳ khác nhau. Việc cơ cấu danh mục không chỉ là cơ cấu danh mục trong 1 kênh đầu tư, mà còn là cơ cấu danh mục tại toàn bộ các kênh đầu tư khác nhau để đảm bảo luôn có ít nhất 1 hoặc nhiều phần trong danh mục luôn sinh lời.
 
+# Tương quan giữa biểu đồ giá và chu kỳ dài hạn
+
+Nếu lý thuyết của thị trường là thị trường hiệu quả, thì trong tương lai và xu hướng lâu dài, nó luôn phản ánh đúng bản chất và quy mô của thị trường. Tuy nhiên trong ngắn hạn, sự đánh giá này thường đi chệch khỏi quỹ đạo và có xu hướng quay trở lại, tạo nên cơ hội cho những nhà đầu tư kịp nắm bắt. 
+
+# Định hình phương pháp kinh doanh tài chính trong dài hạn
+
+Việc định hình phương pháp tư duy và đầu tư chứng khoán là vô cùng quan trọng trong khi đầu tư tài chính. Vì tiền là tài sản cá nhân, mỗi cá nhân sẽ có những vị thế riêng ở từng thời điểm khác nhau trong hiện tại và tương lai, từ đó định hình lên phương pháp và hành động của họ ở thời điểm hiện tại. Để quản lý được lợi suất tổng thể của danh mục, cần xây dựng nguyên tắc đầu tư bền vững để gia tăng tài sản hiện tại và có cơ hội và tiềm năng trong tương lai, nhưng quan trọng hơn, là có thể chống đỡ được các cú sập mạnh trong thị trường tài chính và nắm bắt được cơ hội xảy ra sau đó. 
+
+Thị trường chứng khoán là một bộ phận, sản phẩm của ngành tài chính, là biểu hiện rõ ràng và nhanh chóng nhất của tâm lý thị trường và các chính sách khác phản ánh vào giá cả của thị trường.
+
+Có nhiều chỉ số trên thị trường, chúng đóng góp các vai trò khác nhau trong cách hình thành giá chứng khoán và tâm lý thị trường. Trong hiểu biết hiện tại của mình, tôi có thể tổng hợp lại các chỉ số như sau:
+
+- Chỉ số lãi suất: Phản ánh việc kiểm soát cung tiền ra nền kinh tế, chi phí vốn, mức độ hấp dẫn trong đầu tư. Việc lãi suất tăng cao phản ánh việc chi phí vốn tăng, từ đó ảnh hưởng đến cung tiền vào các thị trường khác, trong đó có thị trường chứng khoán. Chỉ số lãi suất giúp xác định chu kỳ đầu tư dài hạn của doanh nghiệp và chu kỳ của nền kinh tế. Chỉ số này thường có tác động tương đối muộn nhưng ảnh hưởng lâu dài đến nền kinh tế trong tương lai.
+
+Câu hỏi đặt ra là: Khi lãi suất tăng, nhóm nào là nhóm sẽ bị ảnh hưởng và thứ tự ảnh hưởng của các nhóm là như thế nào?
+
+- Nhóm doanh nghiệp, nhà đầu tư doanh nghiệp.
+- Nhóm nhà đầu tư cá nhân.
+- Nhóm nhà đầu tư tự doanh.
+- Nhóm nhà đầu tư khối ngoại.
+
+Cần trả lời được, đây là pha nào của chu kỳ. Chúng ta đang đứng ở đâu?????
+
+- Các chỉ số thị trường:
+
+Nhóm chỉ số này chỉ xu hướng chung của cổ phiếu, nhưng dễ bị nhiễu bởi các cổ phiếu có vốn hóa lớn hoặc tăng bất thường. Cần loại bỏ các nhiễu này để biết được diễn biến thực sự của nền chỉ số trong thị trường.
+
+- VNINDEX
+- VN30
+- Cần tính toán thêm các chỉ số ngành để biết sức khỏe của các ngành. Sau khi xu hướng hình thành có thể phân tích tương quan để biết dòng tiền đang đi vào nhóm cổ phiếu nào, có hiện tượng tăng giảm, phân hóa theo ngành hay không.
+
+# Phương pháp đầu tư giá trị
+
+Bắt đầu tiếp cận với phương pháp đầu tư giá trị, tôi bắt đầu cảm thấy mình đã tìm ra hướng đi đúng và có thể kiểm chứng được trong dài hạn.
+Hướng đi này là hướng đi lành mạnh và không tiêu hao nhiều về mặt tâm lý do số lần đưa ra quyết định về các vấn đề quan trọng ít hơn nhiều so với trading. Ngoài ra phương pháp này cũng hết sức tôn trọng thị trường vì cho phép thị trường có các bước điều chỉnh cần thiết theo thời gian để có thể nhận ra giá trị của một công ty. 
+
+Cách tiếp cận của ông về một cổ phiếu cũng khác biệt so với các nhà đầu tư khác. Ông xem mỗi cổ phiếu đều đại diện cho công việc kinh doanh của một công ty, phản ánh tính bền vững của công ty theo thời gian.
+
+Tôi có một số nhận định riêng của mình như sau:
+Khi thị trường phát triển theo thời gian, luôn có các thiên tài về lĩnh vực và hiểu biết của mình, một số người thành công đại diện cho suy nghĩ và cách thức hành động của mình. Nhưng người đó có thể thành công và trở nên vĩ đại được vì thời gian, thời cuộc đã thay đổi nhiều so với mỗi thời kỳ khác nhau. Tôi đã đọc qua sách và biết được suy nghĩ của Jesse Livermore. Ông rất nhạy bén và thành công với triết lý của mình, nhưng tại sao lại là thời kỳ đó mà không phải là thời kỳ khác. Ông cũng đưa ra nhận định của mình về các vấn đề trong tương lai. Rõ ràng là tầm nhìn về đầu tư của ông cũng không thua kém hoặc hơn nhiều so với các nhà đầu tư khác. 
+
+Warran buffet, tại sao ông lại có thể thành công trong thời đại của mình theo phương pháp hoàn toàn khác so với jesse. Rõ ràng Jesse không thể không nhìn ra được tiềm năng của việc đầu tư dài hạn với khối lượng làm việc của mình. Nhưng tại sao ông lại không tin điều đó? Bởi vì thực sự, thời gian đó không xuât hiện các công ty mang lại siêu lợi nhuận trong thời gian dài hạn. Ngược lại, ông nhìn thấy sự suy thoái của các công ty trong dài hạn, định hình bởi nhiều yếu tố và phản ánh vào giá cổ phiếu một cách cực kỳ tiêu cực.
+
+Sự thành công của các triết lý khác nhau phụ thuộc nhiều vào bối cảnh lịch sử của chính thời kỳ đó. Hiện nay, ta có điều kiện nhiều để tìm hiểu bối cảnh lịch sử của các thời kỳ, vì trên thị trường tài chính, hơn 150 năm qua đã hình thành rất nhiều hình mẫu tư duy và phát triển theo thời gian.
+
+Thị trường Việt Nam là thị trường đi sau, mới thành lập tuy nhiên chúng ta không thiếu các siêu cổ phiếu dài hạn. Nghiên cứu và so sánh thị trường với các hình mẫu thị trường trong quá khứ, chúng ta sẽ có thể có khả năng cao hơn trong việc rút ra được kết luận riêng trong thời kỳ của mình để phát triển tư duy đầu tư cá nhân.
+
+Rủi ro của thị trường trong thời kỳ này là gì? Bong bóng đầu tư ngày càng lớn, tính chất chu kỳ phản ánh cực mạnh vào giá cổ phiếu cũng có thể gây ra thiệt hại lớn cho nhà đầu tư.
+
+- Chế độ chính trị ưu tiên những ngành và các kiểu công ty như thế nào.
+- Định hướng của các công ty như thế nào thì trở thành công ty bền vững và gắn vào chế độ, bối cảnh xã hội.
+
+# Hồ sơ cấp chứng chỉ hành nghề chứng khoán
+
++ Có trình độ đại học trở lên;
++ Đạt yêu cầu trong kỳ thi sát hạch cấp chứng chỉ hành nghề chứng khoán, phù hợp với loại chứng chỉ hành nghề chứng khoán đề nghị cấp;
+---
++ Chứng chỉ Những vấn đề cơ bản về chứng khoán và Thị trường chứng khoán
++ Chứng chỉ Pháp luật về chứng khoán và Thị trường chứng khoán
++ Chứng chỉ Phân tích và Đầu tư chứng khoán
++ Chứng chỉ Môi giới chứng khoán và Tư vấn đầu tư chứng khoán.
+
+# Momentum của giá Sự thay đổi của giá trong ngắn hạn.
+
+Giá trong ngắn hạn

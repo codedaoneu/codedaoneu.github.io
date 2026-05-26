@@ -1,66 +1,41 @@
 ---
 layout: post
-title: "Viết cho một góc sâu thẳm trong tâm hồn 2"
+title: "Binh pháp Tôn Tử - Thiên 1: Kế sách"
 author: "codedaoneu"
 tags: myself
 ---
 
 
-Tình yêu là gì? Và hôn nhân có giống như tình yêu?
-Trong tình yêu, người ta đi tìm kiếm sự đủ đầy. Vậy còn hôn nhân, người ta đi tìm kiếm thứ gì. Đó là những thứ mà chính mình còn thiếu thốn. Đôi khi đơn giản chỉ là vật chất. Đôi khi chỉ là chúng ta thiếu đi một mảnh ghép nào đó mà ta hằng mong muốn. 
+Chiến tranh là việc đại sự của quốc gia, vì vậy cần phải khảo sát và nghiên cứu cho thật kỹ. Tôn tử đã liệt kê ra 5 mặt của chiến tranh để phân tích, nghiên cứu, so sánh để tìm hiểu tình thế thắng, bại trong chiến tranh. Năm mặt đó là:
 
-Tôi đã bắt đầu hiểu tất cả. Tôi hiểu mình là ai, mình đến với thế gian này với mục đích gì. Tôi bắt đầu hiểu tâm hồn của mình, bóng tối của mình. Tôi đã có thể nhìn vào tận sâu thẳm trong tâm hồn mình để thấy những gì đẹp nhất, và xấu nhất trong con người mình. Tôi đã học được cách bắt đầu thành thật với bản thân, và xã hội xung quanh.
+- Đạo:
 
-Cuộc sống thật diệu kỳ. Cảm ơn tất cả, tất cả đã đến với tôi. Cả những khoảng thời gian cô đơn tĩnh lặng.
+Đạo là chỉ việc chính trị, đạo nghĩa, phải làm cho nguyện vọng của dân chúng và vua
+nhất trí với nhau, đồng tâm đồng đức. Có như vậy, trong chiến tranh mới có thể bảo
+nhân dân vì vua mà chết, vì vua mà sống, không sợ hiểm nguy
 
-Xuân đã sang rồi, em biết không
-Đào mai đã nở, khắp thôn đông
-Đêm xuống quây quần bên nồi bánh
-Pháo nổ rền vang cả cánh đồng.
+- Thiên
 
-Hạ đã sang rồi, em biết không
-Phượng nở đỏ hơn cả hừng đông
-Sông nước mênh mang tràn nhựa sống.
-Lúa nặng, ròn tan cả cánh đồng.
+Thiên là thiên thời,
+nói về ngày đêm, trời râm trời nắng, trời lạnh trời nóng, tức tình trạng về khí hậu thời
+tiết. 
 
-Thu đã sang rồi, em biết không
-Bằng lăng tím biếc nở đã xong
-Gió đưa xào xạc, cây thay lá
-Đây đó, lao xao, trẻ tới trường.
+- Địa
 
-gió đông về rồi , em biết không 
-Sương rơi phủ kín cả cánh đồng
-nắng mai le lói đồng hoang vắng
-ngõ nhỏ đêm khuya thoáng lửa hồng.
+Địa là địa lợi, nói về đường sá xa gần, địa thế hiểm yếu hay bằng phẳng, khu vực
+tác chiến rộng hẹp, địa hình phải chăng có lợi cho tiến công, phòng thủ, tiến tới, thối
+lui
 
-Dưới làn nước lặng một bóng cây
-Uyên ương đôi cá thoáng đâu đây
-Yên ả mặt hồ trời soi bóng
-Nắng chiếu trong veo ánh nước đầy
+- Tướng
 
-Phải chi ông trời đã rửa tay
-Hồng trần bụi bặm, kiếp sinh này
-An yên một thoáng sao khó vậy
-Như nước hồ kia, bụi lắng đầy.
+Tướng là tướng soái, tức nói về tài trí, uy tín, lòng nhân ái, lòng can đảm, sự uy
+nghiêm của người tướng
 
-Muốn cầu, cầu không đến
-Mưu phúc, phúc không qua
-Chi bằng tâm tĩnh tại
-May mắn, phúc ghé nhà.
+- Pháp
 
-Trời hồng, sáng rực cả hừng đông
-Nắng qua sông vắng, sương rời phòng
-Đò nhẹ nổ máy, xuyên chăn sóng
-Gió mở màn đêm, dệt trời quang.
+Pháp là pháp chế, nói về tình trạng tổ chức, biên chế, sự quy
+định về hiệu lệnh chỉ huy, sự phân chia chức quyền của tướng tá, sự cung ứng vật tư
+cho quân đội và chế độ quản lý
 
-Người qua thưa thớt, đường khăn uốn
-Đồng hoang lạnh lẽo, thảm buông xuôi
-Vách núi vươn vai, tường lạnh lẽo
-Rừng cây ướt lá, mắt trong veo.
-
-Dream chiến ngã tư sở ôm cua
-Trường Trinh đông đúc, đang cười đùa
-Đong đưa đường vắng Lê Trọng Tấn
-Nguyễn Lân ngõ nhỏ, vẫn phòng xưa.
 
 
